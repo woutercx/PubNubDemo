@@ -1,0 +1,1 @@
+--debug -O=gsharedvt  --aot=mtriple=armv7-ios,full,static,asmonly,direct-icalls,dwarfdebug,no-direct-calls,iphone-abi,outfile=/monotouch.dll.armv7.s "/Developer/MonoTouch/usr/lib/mono/2.1/monotouch.dll"

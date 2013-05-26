@@ -1,0 +1,1 @@
+--debug -O=gsharedvt  --aot=mtriple=armv7-ios,full,static,asmonly,direct-icalls,soft-debug,dwarfdebug,no-direct-calls,iphone-abi,outfile=/PubnubMessaging.dll.armv7.s "/Users/wouter/Ontwikkel/PubNubDemo/PubNub/bin/iPhone/Debug/PubnubMessaging.dll"
