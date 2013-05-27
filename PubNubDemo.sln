@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PubNubDemo", "PubNubDemo\PubNubDemo.csproj", "{6ADAB2AC-D79C-459D-B152-737D5B80CBCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pubnub-Messaging", "PubNub\Pubnub-Messaging.csproj", "{DAF3F1BC-9CB3-4950-85B5-A38F8742AA78}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -27,18 +25,6 @@ Global
 		{6ADAB2AC-D79C-459D-B152-737D5B80CBCF}.Release|iPhone.Build.0 = Release|iPhone
 		{6ADAB2AC-D79C-459D-B152-737D5B80CBCF}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{6ADAB2AC-D79C-459D-B152-737D5B80CBCF}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{DAF3F1BC-9CB3-4950-85B5-A38F8742AA78}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
-		{DAF3F1BC-9CB3-4950-85B5-A38F8742AA78}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
-		{DAF3F1BC-9CB3-4950-85B5-A38F8742AA78}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
-		{DAF3F1BC-9CB3-4950-85B5-A38F8742AA78}.AppStore|iPhone.Build.0 = AppStore|iPhone
-		{DAF3F1BC-9CB3-4950-85B5-A38F8742AA78}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{DAF3F1BC-9CB3-4950-85B5-A38F8742AA78}.Debug|iPhone.Build.0 = Debug|iPhone
-		{DAF3F1BC-9CB3-4950-85B5-A38F8742AA78}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{DAF3F1BC-9CB3-4950-85B5-A38F8742AA78}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{DAF3F1BC-9CB3-4950-85B5-A38F8742AA78}.Release|iPhone.ActiveCfg = Release|iPhone
-		{DAF3F1BC-9CB3-4950-85B5-A38F8742AA78}.Release|iPhone.Build.0 = Release|iPhone
-		{DAF3F1BC-9CB3-4950-85B5-A38F8742AA78}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{DAF3F1BC-9CB3-4950-85B5-A38F8742AA78}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = PubNubDemo\PubNubDemo.csproj

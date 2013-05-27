@@ -38,7 +38,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\iPhone\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
+    <DefineConstants>DEBUG; MONOTOUCH;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchDebug>true</MtouchDebug>
@@ -100,15 +100,10 @@
     <Compile Include="PubNubDemoViewController.designer.cs">
       <DependentUpon>PubNubDemoViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pubnub.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="PubNubDemoViewController.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <ProjectReference Include="..\PubNub\Pubnub-Messaging.csproj">
-      <Project>{DAF3F1BC-9CB3-4950-85B5-A38F8742AA78}</Project>
-      <Name>Pubnub-Messaging</Name>
-    </ProjectReference>
-  </ItemGroup>
 </Project>

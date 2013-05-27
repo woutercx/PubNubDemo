@@ -110,27 +110,27 @@ namespace PubNubDemo
 
 			//Log("Running Subscribe()");
 
-			_pubnub.Subscribe<string>(CHANNELNAME, 
-			                          DisplayReturnMessageSubscribe, 
-			                          DisplayConnectStatusMessageSubscribe);
+//			_pubnub.Subscribe<string>(CHANNELNAME, 
+//			                          DisplayReturnMessageSubscribe, 
+//			                          DisplayConnectStatusMessageSubscribe);
 
 
-//			try
-//			{
-//				_pubnub.Subscribe<string>(CHANNELNAME, 
-//				                          DisplayReturnMessageSubscribe, 
-//				                          DisplayConnectStatusMessageSubscribe);
-//			}
-//			catch(Exception exc)
-//			{
-//				Console.WriteLine(exc.Message);
-//				Console.WriteLine(exc.StackTrace);
-//				if(exc.InnerException != null)
-//				{
-//					Console.WriteLine(exc.InnerException.Message);
-//					Console.WriteLine(exc.InnerException.StackTrace);
-//				}
-//			}
+			try
+			{
+				_pubnub.Subscribe<string>(CHANNELNAME, 
+				                          DisplayReturnMessageSubscribe, 
+				                          DisplayConnectStatusMessageSubscribe);
+			}
+			catch(Exception exc)
+			{
+				Console.WriteLine(exc.Message);
+				Console.WriteLine(exc.StackTrace);
+				if(exc.InnerException != null)
+				{
+					Console.WriteLine(exc.InnerException.Message);
+					Console.WriteLine(exc.InnerException.StackTrace);
+				}
+			}
 		}
 
 		private void DisplayReturnMessageSubscribe(string result)
@@ -269,67 +269,15 @@ namespace PubNubDemo
 			return true;
 		}
 
-//		Task.Factory.StartNew (
-//			// tasks allow you to use the lambda syntax to pass work
-//			() => {
-//			//Thread.Sleep(3000);
-//			var response = CloudService.Client.KlantRegistreren(bsn, deviceId, platform);
-//			isRegistered = response.Geregistreerd;
-//			errorMessages = response.Errors;
-//
-//		}
-//		// ContinueWith allows you to specify an action that runs after the previous thread
-//		// completes
-//		// 
-//		// By using TaskScheduler.FromCurrentSyncrhonizationContext, we can make sure that 
-//		// this task now runs on the original calling thread, in this case the UI thread
-//		// so that any UI updates are safe. in this example, we want to hide our overlay, 
-//		// but we don't want to update the UI from a background thread.
-//		).ContinueWith ( 
-//		                t => {
-//			loadingOverlay.Hide ();
-//			//				if(errorMessages != null && errorMessages.Any()) {
-//			//					lblRegistrationErrorField.Text = "Helaas, registratie ging niet goed....De fouten zijn:\n" + 
-//			//						string.Join("\n", errorMessages);
-//			//				}
-//			//				else {
-//			//					lblRegistrationErrorField.Text = "het ging goed! De klant is " + (isRegistered ? "wel" : "niet") + " geregistreerd.";
-//			//					
-//			//				}
-//			this.NavigationController.PushViewController(new RegistrationCompleted(), true);
-//		}, TaskScheduler.FromCurrentSynchronizationContext()
-//		);
-
 		public void Log(string message)
 		{
-//			lock(_logLock)
-//			{
-//				InvokeOnMainThread (delegate { 
-//					_tableItems.Add(message);
-//					SetTableItems(_tableItems);
-//				} );
-//			}
-
-//			var context = TaskScheduler.FromCurrentSynchronizationContext ();
-//
-//			Task.Factory.StartNew (() => {
-//				//DoSomeExpensiveTask();
-//				return "Hi Mom";
-//			}).ContinueWith (t => { 
-//				txtOutput.Text = message;
-//				//DoSomethingInUI(t.Result);             
-//			}, context);
-
-//			InvokeOnMainThread (delegate { 
-//				txtOutput.Text = txtOutput.Text + message + Environment.NewLine;
-//			} );
-
-//			UIApplication.SharedApplication.InvokeOnMainThread(
-//
-//
-//				UIApplication.SharedApplication.InvokeOnMainThread(() => {
-//						txtOutput.Text = message;
-//				});
+			lock(_logLock)
+			{
+				InvokeOnMainThread (delegate { 
+					_tableItems.Add(message);
+					SetTableItems(_tableItems);
+				} );
+			}
 		}
 
 		#region Apple methods
@@ -413,3 +361,54 @@ namespace PubNubDemo
 	}
 }
 
+//			var context = TaskScheduler.FromCurrentSynchronizationContext ();
+//
+//			Task.Factory.StartNew (() => {
+//				//DoSomeExpensiveTask();
+//				return "Hi Mom";
+//			}).ContinueWith (t => { 
+//				txtOutput.Text = message;
+//				//DoSomethingInUI(t.Result);             
+//			}, context);
+
+//			InvokeOnMainThread (delegate { 
+//				txtOutput.Text = txtOutput.Text + message + Environment.NewLine;
+//			} );
+
+//			UIApplication.SharedApplication.InvokeOnMainThread(
+//
+//
+//				UIApplication.SharedApplication.InvokeOnMainThread(() => {
+//						txtOutput.Text = message;
+//				});
+
+//		Task.Factory.StartNew (
+//			// tasks allow you to use the lambda syntax to pass work
+//			() => {
+//			//Thread.Sleep(3000);
+//			var response = CloudService.Client.KlantRegistreren(bsn, deviceId, platform);
+//			isRegistered = response.Geregistreerd;
+//			errorMessages = response.Errors;
+//
+//		}
+//		// ContinueWith allows you to specify an action that runs after the previous thread
+//		// completes
+//		// 
+//		// By using TaskScheduler.FromCurrentSyncrhonizationContext, we can make sure that 
+//		// this task now runs on the original calling thread, in this case the UI thread
+//		// so that any UI updates are safe. in this example, we want to hide our overlay, 
+//		// but we don't want to update the UI from a background thread.
+//		).ContinueWith ( 
+//		                t => {
+//			loadingOverlay.Hide ();
+//			//				if(errorMessages != null && errorMessages.Any()) {
+//			//					lblRegistrationErrorField.Text = "Helaas, registratie ging niet goed....De fouten zijn:\n" + 
+//			//						string.Join("\n", errorMessages);
+//			//				}
+//			//				else {
+//			//					lblRegistrationErrorField.Text = "het ging goed! De klant is " + (isRegistered ? "wel" : "niet") + " geregistreerd.";
+//			//					
+//			//				}
+//			this.NavigationController.PushViewController(new RegistrationCompleted(), true);
+//		}, TaskScheduler.FromCurrentSynchronizationContext()
+//		);
