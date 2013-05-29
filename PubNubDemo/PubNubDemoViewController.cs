@@ -30,6 +30,9 @@ namespace PubNubDemo
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			//tblItems.Source = new TableSource(NavigationController, results.ToArray());
+			_tableSource = new TableSource(NavigationController, _tableItems.ToArray());
+			tblItems.Source = _tableSource;
 			_subscribed = false;
 			SetShouldReturnOnTextFields();
 			tblItems.ScrollEnabled = true;
@@ -60,15 +63,14 @@ namespace PubNubDemo
 		{
 			_tableSource.SetTableItems = results.ToArray();
 
-			//tblItems.Source = new TableSource(NavigationController, results.ToArray());
 			tblItems.ReloadData();
 		}
 
 		void btnSubscribe_Click (object sender, EventArgs e)
 		{
 			Subscribe();
-			//_subscribed = true;
-			//ToggleButtonPublish(true);
+			_subscribed = true;
+			ToggleButtonPublish(true);
 		}
 
 		void btnUnSubscribe_Click (object sender, EventArgs e)
@@ -207,6 +209,8 @@ namespace PubNubDemo
 			                            DisplayReturnMessageUnsubscribe, 
 			                            DisplayConnectStatusMessageUnsubscribe, 
 			                            DisplayDisconnectStatusMessageUnsubscribe);
+
+			ToggleButtonPublish(false);
 		}
 
 		private void DisplayReturnMessageUnsubscribe(string result)
@@ -335,6 +339,7 @@ namespace PubNubDemo
 			set
 			{
 				_tableItems = value;
+				
 			}
 		}
 
