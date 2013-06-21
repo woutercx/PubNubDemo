@@ -1,1 +1,0 @@
---debug --aot=mtriple=armv7-darwin,full,static,asmonly,direct-icalls,no-direct-calls,iphone-abi,outfile=/System.Xml.dll.armv7.s "/Users/wouter/Ontwikkel/PubNubDemo/PubNubDemo/bin/iPhone/Debug/PubNubDemo.app/System.Xml.dll"

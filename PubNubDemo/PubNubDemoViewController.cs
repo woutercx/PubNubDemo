@@ -15,8 +15,8 @@ namespace PubNubDemo
 		private object _logLock = new object();
 		Pubnub _pubnub;
 		const string CHANNELNAME = "pubnubwoutercxdemo";
-		const string PUBLISH_KEY = "pub-c-4746ca37-3480-427a-891f-fb01dbcd388b";
-		const string SUBSCRIBE_KEY = "sub-c-cf6399f0-ba1c-11e2-89ba-02ee2ddab7fe";
+		const string PUBLISH_KEY = " YOUR PUBLISH KEY HERE ";
+		const string SUBSCRIBE_KEY = " YOUR SUBSCRIBE KEY HERE ";
 		const string SECRET_KEY = "";
 		private bool _subscribed;
 		private TableSource _tableSource;
@@ -54,8 +54,15 @@ namespace PubNubDemo
 
 			InitPubNub();
 
-			//HereNow(); // Only works when you've enabled "Channel presence" in the Admin portal
-			//History(); // Only works when you've enabled "Storage & Playback" in the Admin portal
+		}
+
+		public void ApiMethods()
+		{
+			InitPubNub();
+			Subscribe();
+			Publish("message");
+			HereNow(); // Only works when you've enabled "Channel presence" in the Admin portal
+			History(); // Only works when you've enabled "Storage & Playback" in the Admin portal
 		}
 
 	    //http://www.codeproject.com/Articles/432078/An-Introduction-and-Thoughts-on-Developing-iOS-App
@@ -106,17 +113,6 @@ namespace PubNubDemo
 
 		void Subscribe()
 		{
-			//_tableSource = new TableSource(NavigationController, _tableItems.ToArray());
-			//tblItems.Source = _tableSource;
-
-
-			//Log("Running Subscribe()");
-
-//			_pubnub.Subscribe<string>(CHANNELNAME, 
-//			                          DisplayReturnMessageSubscribe, 
-//			                          DisplayConnectStatusMessageSubscribe);
-
-
 			try
 			{
 				_pubnub.Subscribe<string>(CHANNELNAME, 
@@ -152,7 +148,6 @@ namespace PubNubDemo
 		void Publish(string message)
 		{
 			Log("Running Publish()");
-			Log(DateTime.Now.ToLongTimeString());
 
 			_pubnub.Publish<string>(CHANNELNAME, message, DisplayReturnMessagePublish);
 		}
